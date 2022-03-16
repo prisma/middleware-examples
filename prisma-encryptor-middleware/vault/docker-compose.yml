@@ -1,0 +1,11 @@
+version: '2'
+services:
+  vault:
+    image: vault
+    volumes:
+      - $PWD/:/tmp/
+    cap_add:
+      - IPC_LOCK
+    command: server -config /tmp/config.hcl
+    ports:
+      - '8200:8200'
