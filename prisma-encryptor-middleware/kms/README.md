@@ -6,8 +6,9 @@
 
 ```bash
 yarn install
-docker compose up -d
-yarn init-vault
+yarn init-database
+export AWS_REGION=<region>
+export KEY=<arn to aws key>
 ```
 
 ### 2. Run the code
