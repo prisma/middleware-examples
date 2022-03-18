@@ -9,14 +9,12 @@ config()
 
 export const prisma = new PrismaClient()
 const encryptorConfig = {
-    config: {
-        vault: {
-            token: process.env.VAULT_TOKEN,
-            path: 'transit',
-            key: 'test-key',
-            apiVersion: 'v1',
-            endpoint: 'http://127.0.0.1:8200'
-        }
+    vault: {
+        token: process.env.VAULT_TOKEN,
+        path: 'transit',
+        key: 'test-key',
+        apiVersion: 'v1',
+        endpoint: 'http://127.0.0.1:8200'
     }
 };
 const encryptor = PrismaEncryptorMiddleware(Prisma.dmmf, encryptorConfig);
