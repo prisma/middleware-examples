@@ -6,12 +6,8 @@ config()
 
 export const prisma = new PrismaClient()
 const encryptorConfig = {
-    config: {
-        kms: {
-            access_key: '',
-            secret: '',
-            key: ''
-        }
+    kms: {
+        key: process.env.KEY
     }
 };
 const encryptor = PrismaEncryptorMiddleware(Prisma.dmmf, encryptorConfig);

@@ -11,7 +11,7 @@ model User {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
-  ///{ "encryptor": { "config": { "kms": { "access_key": "env(\"AWS_ACCESS_KEY_ID\")", "secret": "env(\"AWS_SECRET_ACCESS_KEY\")", "key": "env(\"AWS_KMS_KEY\")" }}}}
+  ///{ "encryptor": "kms"}
   ssn   String?
   posts Post[]
 }
