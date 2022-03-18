@@ -9,6 +9,7 @@
 ```bash
 yarn install
 docker compose up -d
+yarn init-database
 yarn init-vault
 ```
 
