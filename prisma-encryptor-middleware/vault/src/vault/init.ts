@@ -10,7 +10,7 @@ vault
     return vault.init({ secret_shares: 1, secret_threshold: 1 })
   })
   .then((result) => {
-    fs.writeFileSync(path.join(__dirname, '../.env'), `VAULT_TOKEN=${result.root_token}`)
+    fs.writeFileSync(path.join(__dirname, '../../.env'), `VAULT_TOKEN=${result.root_token}`)
     vault.token = result.root_token
     const key = result.keys[0]
     return vault.unseal({ secret_shares: 1, key })
