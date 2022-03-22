@@ -1,13 +1,14 @@
 {
   "name": "prisma-encryptor-middleware",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
   "license": "",
   "dependencies": {
+    "@prisma-solutions-engineering/prisma-encryptor-middleware": "npm:null@*",
     "@prisma/client": "^3.10.0",
     "dotenv": "^8.2.0",
-    "node-vault": "^0.9.21",
-    "prisma-encryptor-middleware": "file:../../../prisma-encryptor-middleware"
+    "node-vault": "^0.9.21"
   },
   "devDependencies": {
     "@types/node": "^14.14.35",

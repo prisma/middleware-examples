@@ -5,11 +5,13 @@ import { PrismaEncryptorMiddleware } from 'prisma-encryptor-middleware';
 config()
 
 export const prisma = new PrismaClient()
+
 const encryptorConfig = {
     kms: {
         key: process.env.KEY
     }
 };
+
 const encryptor = PrismaEncryptorMiddleware(Prisma.dmmf, encryptorConfig);
 
 prisma.$use(
