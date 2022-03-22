@@ -1,9 +1,6 @@
 import { Prisma, PrismaClient } from '@prisma/client'
 import { config } from 'dotenv'
-import Vault from 'node-vault'
 import { PrismaEncryptorMiddleware } from 'prisma-encryptor-middleware';
-
-const vault = Vault()
 
 config()
 
