@@ -18,3 +18,5 @@ yarn init-vault
 ```bash
 yarn start # starts the script at src/main.ts
 ```
+
+See `src/prisma.ts` for configuration and instantiation of the field encryptor.
