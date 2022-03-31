@@ -14,7 +14,7 @@ const encryptorConfig = {
         endpoint: 'http://127.0.0.1:8200'
     }
 };
-const encryptor = PrismaEncryptorMiddleware(Prisma.dmmf, encryptorConfig);
+const encryptor = PrismaEncryptorMiddleware(Prisma, encryptorConfig);
 
 prisma.$use(
     encryptor.middleware
