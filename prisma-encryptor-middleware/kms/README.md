@@ -33,7 +33,7 @@ const encryptorConfig = {
 const encryptor = PrismaEncryptorMiddleware(Prisma, encryptorConfig);
 
 prisma.$use(
-    encryptor.middleware
+    encryptor
 )
 ```
 

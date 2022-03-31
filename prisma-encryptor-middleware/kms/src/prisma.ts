@@ -1,6 +1,6 @@
 import { Prisma, PrismaClient } from '@prisma/client'
 import { config } from 'dotenv'
-import { PrismaEncryptorMiddleware } from '@prisma-solutions-engineering/prisma-encryptor-middleware';
+import { PrismaEncryptorMiddleware } from '@prisma-solutions-engineering/prisma-encryptor-middleware/src/index';
 
 config()
 
@@ -15,5 +15,5 @@ const encryptorConfig = {
 const encryptor = PrismaEncryptorMiddleware(Prisma, encryptorConfig);
 
 prisma.$use(
-    encryptor.middleware
+    encryptor
 )
