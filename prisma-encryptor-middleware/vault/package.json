@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "",
   "dependencies": {
-    "@prisma-solutions-engineering/prisma-encryptor-middleware": "^0.1.8",
+    "@prisma-solutions-engineering/prisma-encryptor-middleware": "^0.1.9",
     "@prisma/client": "^3.10.0",
     "dotenv": "^8.2.0",
     "node-vault": "^0.9.21"
