@@ -108,7 +108,7 @@ See `src/prisma.ts` for configuration and instantiation of the field encryptor.
 
 ### Validate the encryption
 
-This demo uses a SQLite database found in `prisma/dev.db`. Navigate to the database using the tool of your choice and validate that the fields (`ssn` in this demo) in the database are encrypted and requests using the Prisma model queries return decrypted values.
+This demo uses an SQLite database found in `prisma/dev.db`. Navigate to the database using the tool of your choice and validate that the fields (`ssn` in this demo) in the database are encrypted, and requests using the Prisma model queries return decrypted values.
 
 ## Known Limitations
 
