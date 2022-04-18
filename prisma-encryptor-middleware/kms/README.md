@@ -47,7 +47,7 @@ This middleware supports the following [model queries](https://www.prisma.io/doc
 6. [`delete`](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#delete)
 7. [`deleteMany`](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#deleteMany)
 8. [`upsert`](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#upsert)
-9. [`create`](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createMany)
+9. [`createMany`](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createMany)
 10. [`updateMany`](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#updateMany)
 
 All other model queries continue to work as expected but will not encrypt or decrypt fields using this middleware.
