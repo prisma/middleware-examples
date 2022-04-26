@@ -6,7 +6,7 @@ async function main() {
     data: {
       email: `a@a.de${Math.random().toString(12)}`,
       name: 'Bob',
-      ssn: '12345',
+      ssn: '123-45-2683',
     },
   })
   console.log(user)
