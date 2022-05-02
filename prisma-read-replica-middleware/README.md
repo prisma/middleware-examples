@@ -31,21 +31,12 @@ All other model queries continue to work as expected but will not encrypt or dec
 
 ## Using this Demo
 
-1. Create a new file adjacent to your `schema.prisma` called `read-replica-schema.prisma`.
-2. Inside `read-replica-schema.prisma` add _only_ `generator` and `datasource` blocks.
-3. In the `generator` block, set `output` to `read-replica-client`.
-4. In the `datasource` block, add the URL of your read replica database.
-5. As part of your build process locally and in all environments, run `prisma-read-replica generate --schema PATH_TO_SCHEMA --readReplicaSchema PATH_TO_RR_SCHEMA` to generate the Read Replica client.
-6. Wherever you instantiate Prisma using `new PrismaClient()`, instantiate `PrismaReadReplica` and apply it with `$use`. For example:
+### Set up
 
-```ts
-import { Prisma, PrismaClient } from '@prisma/client'
-import PrismaReadReplicaMiddleware from 'prisma-read-replica-middleware';
-
-const modelsToExclude = ['User'];
-
-prisma.$use(PrismaReadReplicaMiddleware(modelsToExclude));
-```
+1. Install dependencies
+2. `npm run init-database`
+3. `npm run init-read-replica`
+4. `npm run start` -- Observe that `Posts` are returned from the Read Replica (titles prefixed) while `Users` are not
 
 ## Limitations
 
