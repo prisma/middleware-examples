@@ -1,2 +1,4 @@
 .idea
 dev.db
+.DS_Store
+node_modules
