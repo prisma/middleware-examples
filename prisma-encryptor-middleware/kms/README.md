@@ -54,6 +54,11 @@ All other model queries continue to work as expected but will not encrypt or dec
 
 ## Using this Demo
 
+### KMS Configuration
+
+1. [You cannot use an asymmetric KMS key to encrypt data keys.](https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html). When creating a key for encryption choose "Symmetric" and "Encrypt and Decrypt".
+2. When choosing [regionality of the key](https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html) consider your business requirements and security mandate. [Multi-region keys open new security concerns](https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-when-to-use) and require more complex permissions configuration. 
+
 ### Installation
 
 1. Set a new private registry for the `@prisma-solutions-engineering` scope. For example, add a `.npmrc` file with the following. Replacing `YOUR_AUTH_TOKEN` with the token provided.
