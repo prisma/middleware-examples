@@ -35,8 +35,7 @@ All other model queries continue to work as expected but will not encrypt or dec
 
 1. Install dependencies
 2. `npm run init-database`
-3. `npm run init-read-replica`
-4. `npm run start` -- Observe that `Posts` are returned from the Read Replica (titles prefixed) while `Users` are not
+3. `npm run start` -- Observe that `Posts` are returned from the Read Replica (titles prefixed) while `Users` are not
 
 ## Limitations
 

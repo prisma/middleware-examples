@@ -1,5 +1,5 @@
-import { Prisma, PrismaClient } from '@prisma/client'
-import PrismaReadReplicaMiddleware from 'prisma-read-replica-middleware';
+import { PrismaClient } from '@prisma/client'
+import PrismaReadReplicaMiddleware from '@prisma/prisma-read-replica-middleware';
 
 const modelsToExclude = ['User'];
 

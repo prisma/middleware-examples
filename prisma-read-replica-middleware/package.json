@@ -5,13 +5,13 @@
   "license": "",
   "dependencies": {
     "@prisma/client": "^3.11.1",
-    "dotenv": "^16.0.0",
-    "prisma-read-replica-middleware": "file:../../prisma-read-replica"
+    "@prisma/prisma-read-replica-middleware": "^0.0.3",
+    "dotenv": "^16.0.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^6.3.0",
     "@types/node": "^14.14.21",
-    "faker": "^6.6.6",
+    "faker": "^5.5.3",
     "prisma": "^3.11.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "init-database": "npx prisma db push && npm run init-read-replica",
-    "init-read-replica": "npx prisma db push --schema ./node_modules/prisma-read-replica-middleware/prisma/combined-read-replica-schema.prisma && prisma-read-replica-middleware generate --schema ./prisma/schema.prisma --readReplicaSchema ./prisma/read-replica-schema.prisma",
+    "init-read-replica": "prisma-read-replica-middleware generate --schema ./prisma/schema.prisma --readReplicaSchema ./prisma/read-replica-schema.prisma && npx prisma db push --schema ./node_modules/@prisma/prisma-read-replica-middleware/prisma/combined-read-replica-schema.prisma",
     "start": "ts-node src/main.ts"
   }
 }
