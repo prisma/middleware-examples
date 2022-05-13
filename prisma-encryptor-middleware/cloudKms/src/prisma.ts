@@ -1,6 +1,6 @@
 import { Prisma, PrismaClient } from '@prisma/client'
 import { config } from 'dotenv'
-import { PrismaEncryptorMiddleware } from '@prisma-solutions-engineering/prisma-encryptor-middleware/src';
+import { PrismaEncryptorMiddleware } from '@prisma-solutions-engineering/prisma-encryptor-middleware';
 
 config()
 
