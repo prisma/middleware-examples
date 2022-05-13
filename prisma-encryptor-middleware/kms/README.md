@@ -15,7 +15,7 @@ model User {
 }
 ```
 
-When calling the middleware from the application, [load credentials by your application](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html), pass the KMS configuration information and the Prisma object generated in `@prisma/client`. Finally, activate the middleware with Prisma.use$
+When calling the middleware from the application, [load credentials by your application](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html), pass the KMS configuration information where `key` is the ARN for the Customer Managed Key you would like to use for encryption and decryption, and the Prisma object generated in `@prisma/client`. Finally, activate the middleware with Prisma.use$
 
 ```ts
 import { Prisma, PrismaClient } from '@prisma/client'
@@ -27,7 +27,7 @@ config()
 export const prisma = new PrismaClient()
 const encryptorConfig = {
     kms: {
-        key: ''
+        key: process.env.AWS_CMK_ARN
     }
 };
 const encryptor = PrismaEncryptorMiddleware(Prisma, encryptorConfig);
@@ -53,6 +53,11 @@ This middleware supports the following [model queries](https://www.prisma.io/doc
 All other model queries continue to work as expected but will not encrypt or decrypt fields using this middleware.
 
 ## Using this Demo
+
+### KMS Configuration
+
+1. [You cannot use an asymmetric KMS key to encrypt data keys.](https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html). When creating a key for encryption choose "Symmetric" and "Encrypt and Decrypt".
+2. When choosing [regionality of the key](https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html) consider your business requirements and security mandate. [Multi-region keys open new security concerns](https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-when-to-use) and require more complex permissions configuration. 
 
 ### Installation
 

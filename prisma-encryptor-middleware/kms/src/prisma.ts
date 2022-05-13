@@ -8,7 +8,7 @@ export const prisma = new PrismaClient()
 
 const encryptorConfig = {
     kms: {
-        key: process.env.KEY
+        key: process.env.AWS_CMK_ARN
     }
 };
 
